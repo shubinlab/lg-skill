@@ -6,6 +6,20 @@ description: Safely diagnose and tune LG UltraGear/OLED monitors on Linux with D
 # LG monitor control
 
 Use this procedure for LG UltraGear/OLED display diagnosis and tuning on Linux/Omarchy.
+## Agent and platform adapters
+
+This skill uses the interoperable `SKILL.md` format. Install it under `~/.agents/skills/lg-monitor-control/` for a shared default, or use the client-specific paths in `docs/agents.md`.
+
+The control procedure is platform-adapted:
+
+- Linux: `ddcutil`, DRM inspection, and the desktop compositor's monitor command.
+- Hyprland/Omarchy: `ddcutil`, `hyprctl`, `modetest`, and `~/.config/hypr/monitors.lua`.
+- macOS: MonitorControl, BetterDisplay, DisplayBuddy, or `ddcctl`; no native `ddcutil`.
+- Windows: Monitorian, Twinkle Tray, ControlMyMonitor, `winddcutil`, or LG OnScreen Control.
+- WSL: run DDC/monitor commands on the Windows host unless the host explicitly passes the display device through.
+
+Keep the evidence model identical on every OS: discover the external display, snapshot current values, write one known control, read it back, and verify the active mode/bpc/VRR in the host display stack.
+
 
 ## Safety and scope
 

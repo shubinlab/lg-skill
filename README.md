@@ -40,6 +40,29 @@ This skill gives you a display specialist instead of a pile of guessed commands:
 | **Internal laptop panels / no DDC/CI** | Not supported | Use compositor/GPU controls only; no monitor OSD control |
 
 The reference hardware is an LG UltraGear+ OLED EDID profile matching the 27-inch QHD 240 Hz family, commonly identified as **27GS95QE-B**. EDID product IDs are not a guaranteed retail-model identifier; check the physical label before applying model-specific values. Full details: [compatibility matrix](docs/compatibility.md).
+## Use it with your agent
+
+The skill is written in the interoperable `SKILL.md` format and works across Codex, VS Code/Copilot, Cursor, Claude Code, Gemini CLI, OpenCode, Roo Code, Cline, and Windsurf. Start with the shared path:
+
+```bash
+mkdir -p ~/.agents/skills/lg-monitor-control
+cp SKILL.md ~/.agents/skills/lg-monitor-control/SKILL.md
+```
+
+For native client paths, Windows PowerShell, project-scoped installs, and reload commands, see [Agent compatibility and installation](docs/agents.md).
+
+## Operating systems
+
+| Platform | Status | Control adapter |
+| --- | --- | --- |
+| Linux | First-class | `ddcutil` + DRM/compositor tools |
+| Linux + Hyprland/Omarchy | Reference workflow | `ddcutil` + `hyprctl` + `modetest` |
+| macOS | Guidance + adapter | MonitorControl, BetterDisplay, DisplayBuddy, or `ddcctl` |
+| Windows | Guidance + adapter | Monitorian, Twinkle Tray, ControlMyMonitor, `winddcutil`, or LG OnScreen Control |
+| Windows WSL | Agent skill only by default | Run monitor control on the Windows host |
+| BSD/other Unix | Untested adapter | OS-specific DDC tool |
+
+The skill format is portable; DDC/CI access still depends on the monitor, GPU, cable, dock/KVM, driver, and desktop stack. See the [OS and hardware guide](docs/platforms.md).
 
 ## What it can do
 
