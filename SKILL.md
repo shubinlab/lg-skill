@@ -1,3 +1,8 @@
+---
+name: lg-monitor-control
+description: Safely diagnose and tune LG UltraGear/OLED monitors on Linux with DDC/CI, Hyprland, and Omarchy.
+---
+
 # LG monitor control
 
 Use this procedure for LG UltraGear/OLED display diagnosis and tuning on Linux/Omarchy.

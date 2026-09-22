@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 180" role="img" aria-labelledby="title desc">
+  <title id="title">Control flow</title>
+  <desc id="desc">Discover, snapshot, change, and verify a monitor setting.</desc>
+  <defs><linearGradient id="line" x1="0" x2="1"><stop stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+  <rect width="920" height="180" rx="22" fill="#0f172a"/>
+  <path d="M170 90h110M400 90h110M630 90h110" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
+  <g font-family="Inter,Segoe UI,sans-serif" text-anchor="middle">
+    <g><circle cx="105" cy="90" r="52" fill="#164e63" stroke="#67e8f9" stroke-width="2"/><text x="105" y="84" fill="#f8fafc" font-size="18" font-weight="700">DISCOVER</text><text x="105" y="108" fill="#bae6fd" font-size="13">EDID + DDC</text></g>
+    <g><circle cx="335" cy="90" r="52" fill="#312e81" stroke="#c4b5fd" stroke-width="2"/><text x="335" y="84" fill="#f8fafc" font-size="18" font-weight="700">SNAPSHOT</text><text x="335" y="108" fill="#ddd6fe" font-size="13">read before write</text></g>
+    <g><circle cx="565" cy="90" r="52" fill="#4c1d95" stroke="#e9d5ff" stroke-width="2"/><text x="565" y="84" fill="#f8fafc" font-size="18" font-weight="700">TUNE</text><text x="565" y="108" fill="#f3e8ff" font-size="13">one known value</text></g>
+    <g><circle cx="795" cy="90" r="52" fill="#831843" stroke="#f9a8d4" stroke-width="2"/><text x="795" y="84" fill="#f8fafc" font-size="18" font-weight="700">VERIFY</text><text x="795" y="108" fill="#fbcfe8" font-size="13">active output</text></g>
+  </g>
+</svg>

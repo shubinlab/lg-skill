@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 230" role="img" aria-labelledby="title desc">
+  <title id="title">Verified monitor output</title>
+  <desc id="desc">Terminal-style evidence card showing an active 240Hz 10-bit output.</desc>
+  <rect width="920" height="230" rx="20" fill="#020617" stroke="#334155" stroke-width="2"/>
+  <circle cx="28" cy="28" r="6" fill="#fb7185"/><circle cx="50" cy="28" r="6" fill="#facc15"/><circle cx="72" cy="28" r="6" fill="#4ade80"/>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18">
+    <text x="34" y="74" fill="#94a3b8">$ hyprctl monitors</text>
+    <text x="34" y="108" fill="#67e8f9">DP-2  2560x1440@239.970</text>
+    <text x="34" y="139" fill="#c4b5fd">currentFormat: XRGB2101010</text>
+    <text x="34" y="170" fill="#f9a8d4">vrr: false</text>
+    <text x="34" y="201" fill="#86efac">DDC: 6500 K · brightness 80 · verified</text>
+  </g>
+</svg>

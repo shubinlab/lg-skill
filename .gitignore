@@ -1,0 +1,7 @@
+# Local monitor captures and private diagnostics
+*.vcp
+*.pcap
+*.pcapng
+*.log
+.env
+.env.*

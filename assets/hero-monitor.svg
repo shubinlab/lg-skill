@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-labelledby="title desc">
+  <title id="title">LG monitor control skill</title>
+  <desc id="desc">Original vector illustration of a monitor with a verified 240Hz 10-bit signal.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#312e81"/></linearGradient>
+    <linearGradient id="screen" x1="0" x2="1"><stop stop-color="#22d3ee"/><stop offset=".5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#f472b6"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="920" height="300" rx="28" fill="url(#bg)"/>
+  <circle cx="780" cy="36" r="100" fill="#22d3ee" opacity=".12"/>
+  <circle cx="870" cy="260" r="140" fill="#f472b6" opacity=".11"/>
+  <g transform="translate(44 43)">
+    <rect x="0" y="0" width="390" height="192" rx="15" fill="#0b1020" stroke="#94a3b8" stroke-width="6"/>
+    <rect x="14" y="14" width="362" height="164" rx="8" fill="url(#screen)" opacity=".95"/>
+    <path d="M30 142 C105 82 143 168 215 98 S311 92 358 42" fill="none" stroke="#fff" stroke-width="5" opacity=".78" filter="url(#glow)"/>
+    <rect x="167" y="192" width="56" height="25" rx="5" fill="#64748b"/>
+    <path d="M130 245h130l28 12H102z" fill="#94a3b8"/>
+    <circle cx="350" cy="195" r="4" fill="#22d3ee"/>
+  </g>
+  <g fill="#f8fafc" font-family="Inter,Segoe UI,sans-serif">
+    <text x="490" y="92" font-size="35" font-weight="750">LG monitor control</text>
+    <text x="492" y="133" font-size="18" fill="#cbd5e1">DDC/CI · Hyprland · Omarchy</text>
+    <text x="492" y="187" font-size="22" font-weight="700" fill="#67e8f9">240 Hz</text>
+    <text x="610" y="187" font-size="22" font-weight="700" fill="#c4b5fd">10-bit</text>
+    <text x="740" y="187" font-size="22" font-weight="700" fill="#f9a8d4">verified</text>
+    <text x="492" y="225" font-size="15" fill="#cbd5e1">safe writes · evidence-first tuning</text>
+  </g>
+</svg>
