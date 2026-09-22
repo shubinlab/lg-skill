@@ -4,29 +4,63 @@
 
 # LG Monitor Control Skill
 
-**A safe, evidence-first playbook for LG UltraGear/OLED monitors on Linux, Hyprland, and Omarchy.**
+**Turn a supported LG monitor into a verified, scriptable Linux display.**
 
 [![Validate](https://github.com/shubinlab/lg-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/shubinlab/lg-skill/actions/workflows/validate.yml)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-SKILL.md-6d5dfc)](SKILL.md)
-[![Linux](https://img.shields.io/badge/Linux-supported-1793d1?logo=linux&logoColor=white)](#quick-start)
+[![Linux](https://img.shields.io/badge/Linux-supported-1793d1?logo=linux&logoColor=white)](#compatibility)
 [![License](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
 
 </div>
 
-> Tune the monitor you actually have. Read the negotiated signal, change one verified control, and prove the active result.
+> **Best for:** LG UltraGear/OLED owners who want a clean 240 Hz/10-bit setup, 6500 K color, safe brightness control, VRR-flicker mitigation, and proof that the compositor is really outputting what was requested.
+
+## Why install it?
+
+This skill gives you a display specialist instead of a pile of guessed commands:
+
+- **Know before you touch.** Reads EDID, DDC/CI capabilities, DRM connector limits, active mode, bit depth, and VRR state.
+- **Tune the picture in one pass.** Brightness, contrast, 6500 K, RGB gains, sharpness, and model-confirmed Black Stabilizer.
+- **Get the high-refresh profile right.** 240 Hz + 10 bpc + fixed refresh when OLED VRR flicker is visible; 144 Hz fallback when the link is marginal.
+- **Avoid expensive mistakes.** Snapshots before writes, readback after writes, no random HID/serial payloads, no unsupported 12-bit claims.
+- **Omarchy-native.** Writes only user Hyprland overrides and validates with `hyprctl` after every change.
+- **Agent-ready.** A compact `SKILL.md` teaches an agent the workflow, safety boundaries, and verification evidence.
 
 ![Control flow](assets/control-flow.svg)
 
-## Why this exists
+## Compatibility at a glance
 
-LG gaming monitors expose a useful standard control plane through **DDC/CI**. Their USB composite device may additionally expose HID and CDC interfaces, but the USB protocol is proprietary and unsafe to probe blindly. This skill keeps the reliable path boring:
+| Monitor family | Status | What works |
+| --- | --- | --- |
+| **LG UltraGear/OLED with DDC/CI + MCCS** | Supported | Standard brightness/contrast/color/RGB/sharpness; verified output profiles |
+| **LG UltraGear with VCP `0xF9`** | Extended | Black Stabilizer read/write after range validation |
+| **LG UltraGear+ OLED 2560×1440/240 Hz** | Reference-tested | 6500 K, brightness, 10 bpc, 240 Hz, fixed-refresh anti-flicker profile |
+| **LG displays exposing only basic DDC/CI** | Partial | Standard VCP controls only; vendor OSD controls may be unavailable |
+| **LG Monitor Controls USB HID/CDC** | Guarded | Detected and documented; proprietary raw protocol is not fuzzed |
+| **Internal laptop panels / no DDC/CI** | Not supported | Use compositor/GPU controls only; no monitor OSD control |
 
-- discover the real monitor and active connector;
-- snapshot before mutation;
-- use standard VCP controls first;
-- gate vendor-specific controls by readback and sane ranges;
-- treat EDID claims and compositor intent as hypotheses until DRM reports the active format;
-- use fixed refresh when OLED VRR flicker is visible.
+The reference hardware is an LG UltraGear+ OLED EDID profile matching the 27-inch QHD 240 Hz family, commonly identified as **27GS95QE-B**. EDID product IDs are not a guaranteed retail-model identifier; check the physical label before applying model-specific values. Full details: [compatibility matrix](docs/compatibility.md).
+
+## What it can do
+
+- Discover the correct DDC display and connector.
+- Snapshot current VCP state before mutations.
+- Set and verify brightness, contrast, 6500 K, RGB gains, and sharpness.
+- Use confirmed LG UltraGear `0xF9` Black Stabilizer mappings.
+- Build a stable Hyprland/Omarchy profile by monitor description.
+- Select fixed 240 Hz or 144 Hz fallback modes.
+- Verify active `currentFormat`, negotiated bpc, VRR, mode, and link state.
+- Explain when an EDID advertises 12 bpc but the active connector exposes only 8–10 bpc.
+- Separate SDR, HDR, OLED-care, and VRR concerns instead of mixing them.
+
+## What it cannot promise
+
+- Exact colorimeter-grade calibration without a colorimeter.
+- 12-bit output when the physical DP/HDMI path or driver caps the connector at 10 bpc.
+- Elimination of OLED VRR flicker while VRR remains enabled.
+- A universal raw USB OSD protocol: LG HID/CDC endpoints are proprietary.
+- Safe writes to undocumented `0xF7`, `0xF8`, `0x15`, side-channel, or firmware controls without model evidence.
+- Control of internal laptop panels that do not expose DDC/CI.
 
 ## Quick start
 
@@ -48,7 +82,7 @@ hyprctl configerrors
 modetest -M amdgpu -c
 ```
 
-If the monitor is external and the user reports flicker, prefer this Omarchy/Hyprland baseline:
+For an external monitor where the user reports OLED flicker, use this Omarchy/Hyprland baseline:
 
 ```lua
 local external = "desc:LG Electronics LG ULTRAGEAR+"
@@ -71,7 +105,7 @@ hyprctl configerrors
 hyprctl monitors all
 ```
 
-## Safe baseline
+## Safe picture baseline
 
 | Layer | Baseline | Why |
 | --- | --- | --- |
