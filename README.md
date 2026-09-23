@@ -63,6 +63,7 @@ For native client paths, Windows PowerShell, project-scoped installs, and reload
 | BSD/other Unix | Untested adapter | OS-specific DDC tool |
 
 The skill format is portable; DDC/CI access still depends on the monitor, GPU, cable, dock/KVM, driver, and desktop stack. See the [OS and hardware guide](docs/platforms.md).
+![Agents and platforms](assets/compatibility-map.svg)
 
 ## What it can do
 

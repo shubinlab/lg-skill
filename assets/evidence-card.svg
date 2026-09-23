@@ -1,13 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 230" role="img" aria-labelledby="title desc">
-  <title id="title">Verified monitor output</title>
-  <desc id="desc">Terminal-style evidence card showing an active 240Hz 10-bit output.</desc>
-  <rect width="920" height="230" rx="20" fill="#020617" stroke="#334155" stroke-width="2"/>
-  <circle cx="28" cy="28" r="6" fill="#fb7185"/><circle cx="50" cy="28" r="6" fill="#facc15"/><circle cx="72" cy="28" r="6" fill="#4ade80"/>
-  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18">
-    <text x="34" y="74" fill="#94a3b8">$ hyprctl monitors</text>
-    <text x="34" y="108" fill="#67e8f9">DP-2  2560x1440@239.970</text>
-    <text x="34" y="139" fill="#c4b5fd">currentFormat: XRGB2101010</text>
-    <text x="34" y="170" fill="#f9a8d4">vrr: false</text>
-    <text x="34" y="201" fill="#86efac">DDC: 6500 K · brightness 80 · verified</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
+  <title id="title">Verified active monitor output</title>
+  <desc id="desc">A terminal evidence panel with active refresh, format, color, and VRR values.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#090d18"/><stop offset="1" stop-color="#181b38"/></linearGradient>
+    <linearGradient id="ok" x1="0" x2="1"><stop stop-color="#4be7d6"/><stop offset="1" stop-color="#86efac"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-opacity=".32"/></filter>
+  </defs>
+  <rect width="1200" height="340" rx="28" fill="url(#bg)"/>
+  <rect x="34" y="34" width="720" height="272" rx="18" fill="#050811" stroke="#34415f" filter="url(#shadow)"/>
+  <circle cx="68" cy="68" r="6" fill="#ff6f8f"/><circle cx="90" cy="68" r="6" fill="#ffd25c"/><circle cx="112" cy="68" r="6" fill="#5cf19a"/>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="19">
+    <text x="62" y="112" fill="#8190ad">$ hyprctl monitors</text>
+    <text x="62" y="151" fill="#70efe7">DP-2   2560x1440@239.970</text>
+    <text x="62" y="188" fill="#c4b8ff">currentFormat: XRGB2101010</text>
+    <text x="62" y="225" fill="#ff9ecb">vrr: false</text>
+    <text x="62" y="262" fill="#9cf4bb">status: connected  •  configerrors: none</text>
+  </g>
+  <g transform="translate(800 55)" font-family="Inter,Segoe UI,sans-serif">
+    <text x="0" y="21" fill="#7de8e1" font-size="13" font-weight="800" letter-spacing="3">READBACK PROOF</text>
+    <text x="0" y="63" fill="#f7f8ff" font-size="28" font-weight="800">The display agrees.</text>
+    <text x="0" y="94" fill="#aeb8d5" font-size="16">Intent is not evidence.</text>
+    <rect y="132" width="330" height="86" rx="17" fill="#122e2c" stroke="#62e7ae" stroke-opacity=".65"/>
+    <circle cx="31" cy="175" r="15" fill="#65e7ad" fill-opacity=".16" stroke="#9cf4bb"/><path d="M24 175l5 5 10-12" fill="none" stroke="#9cf4bb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="62" y="170" fill="#effff6" font-size="16" font-weight="750">6500 K · brightness 80</text>
+    <text x="62" y="195" fill="#a8ebc4" font-size="13">DDC/CI readback verified</text>
   </g>
 </svg>

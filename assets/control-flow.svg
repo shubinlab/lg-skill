@@ -1,13 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 180" role="img" aria-labelledby="title desc">
-  <title id="title">Control flow</title>
-  <desc id="desc">Discover, snapshot, change, and verify a monitor setting.</desc>
-  <defs><linearGradient id="line" x1="0" x2="1"><stop stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
-  <rect width="920" height="180" rx="22" fill="#0f172a"/>
-  <path d="M170 90h110M400 90h110M630 90h110" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
-  <g font-family="Inter,Segoe UI,sans-serif" text-anchor="middle">
-    <g><circle cx="105" cy="90" r="52" fill="#164e63" stroke="#67e8f9" stroke-width="2"/><text x="105" y="84" fill="#f8fafc" font-size="18" font-weight="700">DISCOVER</text><text x="105" y="108" fill="#bae6fd" font-size="13">EDID + DDC</text></g>
-    <g><circle cx="335" cy="90" r="52" fill="#312e81" stroke="#c4b5fd" stroke-width="2"/><text x="335" y="84" fill="#f8fafc" font-size="18" font-weight="700">SNAPSHOT</text><text x="335" y="108" fill="#ddd6fe" font-size="13">read before write</text></g>
-    <g><circle cx="565" cy="90" r="52" fill="#4c1d95" stroke="#e9d5ff" stroke-width="2"/><text x="565" y="84" fill="#f8fafc" font-size="18" font-weight="700">TUNE</text><text x="565" y="108" fill="#f3e8ff" font-size="13">one known value</text></g>
-    <g><circle cx="795" cy="90" r="52" fill="#831843" stroke="#f9a8d4" stroke-width="2"/><text x="795" y="84" fill="#f8fafc" font-size="18" font-weight="700">VERIFY</text><text x="795" y="108" fill="#fbcfe8" font-size="13">active output</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence-first monitor tuning workflow</title>
+  <desc id="desc">Four premium cards show discover, snapshot, tune, and verify.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#090d19"/><stop offset="1" stop-color="#181b38"/></linearGradient>
+    <linearGradient id="line" x1="0" x2="1"><stop stop-color="#54e8e0"/><stop offset=".5" stop-color="#9c8cff"/><stop offset="1" stop-color="#ff86c2"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-opacity=".28"/></filter>
+  </defs>
+  <rect width="1200" height="300" rx="30" fill="url(#bg)"/>
+  <text x="56" y="52" fill="#7de8e1" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="800" letter-spacing="3">A SAFE CHANGE IS A TRANSACTION</text>
+  <text x="56" y="88" fill="#f4f6ff" font-family="Inter,Segoe UI,sans-serif" font-size="26" font-weight="750">Inspect → mutate once → prove the active signal</text>
+  <path d="M238 188h56M526 188h56M814 188h56" stroke="url(#line)" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Inter,Segoe UI,sans-serif" filter="url(#shadow)">
+    <g transform="translate(40 122)"><rect width="198" height="116" rx="20" fill="#132a39" stroke="#50e6df"/><circle cx="38" cy="38" r="20" fill="#50e6df" fill-opacity=".16" stroke="#78f1e9"/><text x="38" y="45" fill="#78f1e9" text-anchor="middle" font-size="20" font-weight="800">1</text><text x="72" y="34" fill="#f8fbff" font-size="17" font-weight="800">DISCOVER</text><text x="72" y="58" fill="#a9dfe1" font-size="13">EDID · DDC · DRM</text><text x="24" y="92" fill="#74eee4" font-size="12">Find the real display</text></g>
+    <g transform="translate(328 122)"><rect width="198" height="116" rx="20" fill="#20214a" stroke="#9b8cff"/><circle cx="38" cy="38" r="20" fill="#9b8cff" fill-opacity=".16" stroke="#c7bcff"/><text x="38" y="45" fill="#c7bcff" text-anchor="middle" font-size="20" font-weight="800">2</text><text x="72" y="34" fill="#f8fbff" font-size="17" font-weight="800">SNAPSHOT</text><text x="72" y="58" fill="#c7bcff" font-size="13">read before write</text><text x="24" y="92" fill="#bbb0ff" font-size="12">Keep a reversible baseline</text></g>
+    <g transform="translate(616 122)"><rect width="198" height="116" rx="20" fill="#30204d" stroke="#ff88c3"/><circle cx="38" cy="38" r="20" fill="#ff88c3" fill-opacity=".14" stroke="#ffb4d7"/><text x="38" y="45" fill="#ffb4d7" text-anchor="middle" font-size="20" font-weight="800">3</text><text x="72" y="34" fill="#f8fbff" font-size="17" font-weight="800">TUNE</text><text x="72" y="58" fill="#ffb4d7" font-size="13">one known control</text><text x="24" y="92" fill="#ffb8d6" font-size="12">Write only sane ranges</text></g>
+    <g transform="translate(904 122)"><rect width="198" height="116" rx="20" fill="#163934" stroke="#75e8ad"/><circle cx="38" cy="38" r="20" fill="#75e8ad" fill-opacity=".14" stroke="#a4f3c8"/><text x="38" y="45" fill="#a4f3c8" text-anchor="middle" font-size="20" font-weight="800">4</text><text x="72" y="34" fill="#f8fbff" font-size="17" font-weight="800">VERIFY</text><text x="72" y="58" fill="#a4f3c8" font-size="13">active output</text><text x="24" y="92" fill="#9bf0c0" font-size="12">Trust readback, not intent</text></g>
   </g>
 </svg>

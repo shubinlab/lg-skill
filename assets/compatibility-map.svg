@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+  <title id="title">Agents and platforms</title>
+  <desc id="desc">Original visual map of agent skill compatibility and platform adapters.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a0e1a"/><stop offset="1" stop-color="#201839"/></linearGradient><linearGradient id="wire" x1="0" x2="1"><stop stop-color="#5ae9de"/><stop offset=".5" stop-color="#9c8cff"/><stop offset="1" stop-color="#ff86c3"/></linearGradient></defs>
+  <rect width="1200" height="280" rx="28" fill="url(#bg)"/>
+  <text x="48" y="50" fill="#7de8e1" font-family="Inter,Segoe UI,sans-serif" font-size="13" font-weight="800" letter-spacing="3">ONE SKILL · MANY CLIENTS</text>
+  <text x="48" y="86" fill="#f4f6ff" font-family="Inter,Segoe UI,sans-serif" font-size="27" font-weight="800">Copy once. Discover everywhere.</text>
+  <path d="M600 135H365M600 135H835M600 135V226" fill="none" stroke="url(#wire)" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Inter,Segoe UI,sans-serif">
+    <g transform="translate(486 104)"><rect width="228" height="64" rx="18" fill="#192348" stroke="#b4a6ff"/><text x="114" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="800">SKILL.md</text><text x="114" y="49" text-anchor="middle" fill="#c9c1ff" font-size="12">portable instructions</text></g>
+    <g transform="translate(72 106)"><rect width="293" height="62" rx="17" fill="#102f39" stroke="#61e9df"/><text x="146" y="27" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">Codex · Cursor · Copilot</text><text x="146" y="48" text-anchor="middle" fill="#9beee9" font-size="12">.agents/skills/</text></g>
+    <g transform="translate(835 106)"><rect width="293" height="62" rx="17" fill="#34203f" stroke="#ff8fc5"/><text x="146" y="27" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">Claude · Gemini · OpenCode</text><text x="146" y="48" text-anchor="middle" fill="#ffb6d6" font-size="12">native paths documented</text></g>
+    <g transform="translate(420 218)"><rect width="360" height="42" rx="14" fill="#18372f" stroke="#79e8ae"/><text x="180" y="27" text-anchor="middle" fill="#baf7d0" font-size="14" font-weight="700">Linux · macOS · Windows adapters</text></g>
+  </g>
+</svg>

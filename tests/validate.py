@@ -24,7 +24,7 @@ for svg in (ROOT / "assets").glob("*.svg"):
     ET.parse(svg)
 
 readme = (ROOT / "README.md").read_text(encoding="utf-8")
-for asset in ("assets/hero-monitor.svg", "assets/control-flow.svg", "assets/evidence-card.svg"):
+for asset in ("assets/hero-monitor.svg", "assets/control-flow.svg", "assets/evidence-card.svg", "assets/compatibility-map.svg"):
     assert asset in readme, f"README.md: missing asset link {asset}"
 for doc in ("docs/compatibility.md", "docs/agents.md", "docs/platforms.md"):
     assert doc in readme or doc in (ROOT / "docs/compatibility.md").read_text(encoding="utf-8"), f"missing documentation reference {doc}"
